@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* تنظیمات تم برای نسخه ۴ */
+@theme {
+  --font-vazir: "Vazirmatn", sans-serif;
+  --color-brand: #ea580c; /* Orange 600 */
+}
+
+/* در نسخه ۴ برای کنترل دستی، از این روش استفاده می‌کنیم */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* استایل‌های پایه برای جابه‌جایی نرم */
+@layer base {
+  *, ::after, ::before {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+}
